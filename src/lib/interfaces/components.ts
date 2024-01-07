@@ -68,4 +68,6 @@ export interface TextAreaProps  extends React.TextareaHTMLAttributes<HTMLTextAre
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: "default" | "primary" | "success" | "danger" | "warning" | "info";
     rounded?:"none"|"sm" | "md" | "lg";
+    htmlTag?:"link" | "button"
+    link?:string
 }

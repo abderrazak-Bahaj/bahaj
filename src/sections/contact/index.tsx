@@ -29,15 +29,13 @@ const renderContactInfo = contactInfo.map( item => <ContactInfo key={item.id} {.
 
   return (
     <div className="container mx-auto my-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <div>
           <h1 className="mb-10 md:text-start">
             <span className="text-green-600 font-semibold  text-2xl">CONTACT</span>
             <p className="text-5xl font-bold font-heebo text-gray-900 dark:text-white mt-3">
               {"Les't talk about your project"}
             </p>
           </h1>
-
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <form action="#">
             <div className="grid grid-cols-2 gap-5">
               <div>
@@ -67,9 +65,7 @@ const renderContactInfo = contactInfo.map( item => <ContactInfo key={item.id} {.
               </div>
             </div>
           </form>
-        </div>
-
-        <div className="flex justify-center  flex-col gap-8">
+        <div className="flex  flex-col gap-8">
             {renderContactInfo}
         </div>
       </div>

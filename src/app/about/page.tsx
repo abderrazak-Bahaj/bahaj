@@ -1,8 +1,13 @@
 
+import { ContactAction,ExperienceAndEducation,Projects} from '@/sections'
 
 const BlogApp:React.FC = () => {
     return (
-       <>about</>
+       <div>
+        <ExperienceAndEducation/>
+        <ContactAction/>
+
+       </div>
     )
 }
 

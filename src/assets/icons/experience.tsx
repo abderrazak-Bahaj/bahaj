@@ -3,7 +3,7 @@ import {PropsIcon} from "@/lib/interfaces/components";
 
 const Experience: React.FC<PropsIcon> = ({...props}) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0.00 0.00 512.00 512.00" {...props}>
+    <svg height="15" width="15" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0.00 0.00 512.00 512.00" {...props}>
     <path fill="#ddd" d="
       M 143.84 115.80
       Q 143.90 102.93 143.82 90.33

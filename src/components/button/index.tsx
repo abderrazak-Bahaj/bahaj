@@ -1,15 +1,26 @@
 import React from "react";
 import { ButtonProps } from "@/lib/interfaces/components";
+import Link from "next/link";
 
 const ButtonApp: React.FC<ButtonProps> = ({
   theme = "default",
   rounded = "none",
   className = "",
+  htmlTag = "button",
+  link = "#",
   children,
   ...props
 }) => {
-  const baseClassName = `text-sm px-5 py-3 rounded-${rounded}`;
+  const baseClassName = ` text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md  px-5 py-3 rounded-${rounded}`;
   const finaleClassName = getClassName(theme, className, baseClassName);
+ 
+  if (htmlTag == "link") {
+    return (
+      <Link href={link} className={finaleClassName} >
+        {children}
+      </Link>
+    );
+  }
   return (
     <button className={finaleClassName} {...props}>
       {children}
@@ -19,6 +30,7 @@ const ButtonApp: React.FC<ButtonProps> = ({
 
 export default ButtonApp;
 
+
 const getClassName = (
   theme: string,
   className: string,
@@ -26,7 +38,7 @@ const getClassName = (
 ) => {
   switch (theme) {
     case "primary":
-      return `bg-indigo-500 hover:bg-indigo-800  ${baseClassName} ${className}`;
+      return `bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200  ${baseClassName} ${className}`;
     case "success":
       return `btn bg-green-600 hover:bg-green-800 ${baseClassName} ${className}`;
     case "danger":

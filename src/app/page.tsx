@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ContactAction, ExperienceAndEducation, Hero, Services,LatestBlog,LatestProject,Feedbacks} from '@/sections'
+import { ContactAction, Hero, Services,LatestBlog,LatestProject,Feedbacks} from '@/sections'
 
 export default function Home() {
   return (
@@ -8,7 +8,6 @@ export default function Home() {
       <Services/>
       <Feedbacks/>
       <ContactAction/>
-      <ExperienceAndEducation/>
       <LatestBlog/>
       <LatestProject/>
     </main>
