@@ -12,11 +12,7 @@ export const metadata: Metadata = {
   description: "I Bahaj Abderrazak specialize in innovative Full Stack Development solutions, blending technical prowess with creativity. Let's collaborate and create impactful projects together",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
