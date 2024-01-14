@@ -28,7 +28,7 @@ const ContactApp = () => {
 const renderContactInfo = contactInfo.map( item => <ContactInfo key={item.id} {...item} />)
 
   return (
-    <div className="container mx-auto my-10">
+    <div className="container mx-auto my-10 px-3">
           <h1 className="mb-10 md:text-start">
             <span className="text-green-600 font-semibold  text-2xl">CONTACT</span>
             <p className="text-5xl font-bold font-heebo text-gray-900 dark:text-white mt-3">

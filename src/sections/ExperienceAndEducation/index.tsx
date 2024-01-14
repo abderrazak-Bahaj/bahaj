@@ -4,7 +4,7 @@ import { IconExperience, IconEduction } from '@/assets/icons';
 
  const experience = [
     {
-      title: "Fullstack developer",
+      title: "Fullstack developer at Monarkit",
       date: "07-2022-Present",
       description: "developing fullstack applications for clients and organizations. We are working on different projects with different technologies. ",
     },

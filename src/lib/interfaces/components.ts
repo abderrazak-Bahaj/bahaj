@@ -16,7 +16,7 @@ export interface TimelineItemProps {
 
 export interface ContainerCardProps {
     
-    theme?: "primary" | "secondary" ;
+    theme?: "primary" | "secondary" | "tertiary" ;
     /**
      * The HTML tag to use for the card.
      *

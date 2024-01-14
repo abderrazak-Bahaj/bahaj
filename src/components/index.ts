@@ -14,6 +14,5 @@ export { default as ServiceCard} from './serviceCard'
 export { default as TestApp } from './copy'
 export { default as Popup } from './popup'
 export { default as Badge} from './badge'
-
-
+export { default as ReviewCard} from './reviewCard'
 

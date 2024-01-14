@@ -24,12 +24,12 @@ const Card: React.FC<CardProps> = ({
       height="350"
       width="350"
       src={image}
-      className="text-gray-500 dark:text-gray-400 mb-3 w-full max-h-72 rounded-lg"
+      className={`${props.theme == "secondary" ? "h-[100%] w-[50%]" :"max-h-48"} text-gray-500 dark:text-gray-400 mb-3 w-full  rounded-lg`}
     />
   );
 
   const renderTitle = title && (
-    <h3 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-200">
+    <h3 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-200 group-hover:underline group-focus:underline">
       {title}
     </h3>
   );
@@ -41,7 +41,7 @@ const Card: React.FC<CardProps> = ({
   );
 
   const renderDetails = details && (
-    <p className="mb-3 font-normal text-gray-500 dark:text-gray-400 line-clamp-3">
+    <p className = {`mb-3 font-normal text-gray-500 dark:text-gray-400 ${props.theme == "secondary" ? "line-clamp-6" : "line-clamp-3"}`}>
       {details}
     </p>
   );
@@ -65,11 +65,13 @@ const Card: React.FC<CardProps> = ({
   return (
     <ContainerCard {...props}>
       {renderImage}
-      {renderTitle}
-      {renderTags}
-      {renderDetails}
-      {renderDate}
-      {renderLink}
+      <div className={`${props.theme == "secondary" && "flex flex-col gap-1 "}`}>
+        {renderTitle}
+        {renderTags}
+        {renderDetails}
+        {renderDate}
+        {renderLink}
+      </div>
     </ContainerCard>
   );
 };
@@ -84,9 +86,8 @@ const ContainerCard: React.FC<React.PropsWithChildren<ContainerCardProps>> = ({
   link,
   onclick
 }) => {
-  const hoverClassName = theme === "primary" ? "opacity-80 transition hover:border-pink-500/10 hover:shadow-pink-500/10 hover:opacity-100": "";
-  const baseClassName = "dark:bg-gray-800 p-3 rounded-lg bg-white dark:bg-dark-2 shadow-xl cursor-pointer";
-  const finalClassName = `${baseClassName} ${hoverClassName} ${className}`;
+  const themClassName = getClassName(theme);
+  const finalClassName = `${themClassName} ${className}`;
   
   if (htmlTag === "div") {
     return (
@@ -95,10 +96,25 @@ const ContainerCard: React.FC<React.PropsWithChildren<ContainerCardProps>> = ({
       </div>
     );
   }
-  
+
   return (
     <Link className={finalClassName} href={link ?? "#"}>
       {children}
     </Link>
   );
+}
+
+
+const getClassName = (tag: string) => {
+  const baseClassName = "p-3 rounded-lg bg-white dark:bg-dark-2 shadow-xl cursor-pointer group hover:no-underline focus:no-underline ";
+  switch (tag) {
+    case "primary":
+      return `${baseClassName} dark:bg-gray-800 opacity-80 transition hover:border-pink-500/10 hover:shadow-pink-500/10 hover:opacity-100`;
+    case "secondary":
+      return `${baseClassName} mb-5 max-w-sm gap-3 flex min-w-[100%] w-full  group hover:no-underline focus:no-underline  dark:bg-gray-900 dark:border-gray-700   border border-gray-200`;
+    case "tertiary":
+      return `${baseClassName}  bg-transparent dark:bg-inherit dark:border-gray-700  hover:shadow-gray-800 border border-gray-200`;
+    default:
+      return `${baseClassName} dark:bg-gray-800`;
+  }
 }

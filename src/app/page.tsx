@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <main >
       <Hero/>
-      <Services/>
       <Feedbacks/>
+      <Services/>
       <ContactAction/>
       <LatestBlog/>
       <LatestProject/>
