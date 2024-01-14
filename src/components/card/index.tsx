@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({
       height="350"
       width="350"
       src={image}
-      className={`${props.theme == "secondary" ? "h-[100%] w-[50%]" :"max-h-48"} text-gray-500 dark:text-gray-400 mb-3 w-full  rounded-lg`}
+      className={`text-gray-500 dark:text-gray-400 mb-3 w-full  rounded-lg ${props.theme == "secondary" ? "h-[100%] w-[50%]" :"max-h-48"} `}
     />
   );
 
