@@ -24,20 +24,22 @@ const Technologies: React.FC = () => {
 export default Technologies;
 
 
-
 const getRenderImages = (baseClassName: string) => {
   const imageContext = require.context('@/assets/images/tech', false, /\.(svg|png|jpg)$/);
   const images = imageContext.keys().map(imageContext);
   
-  return images.map((image: any, index: number) => (
-    <div className={baseClassName} key={`Image${index}`}>
-      <Image
-        src={image.default}
-        alt={image.default}
-        width={70}
-        height={70}
-        className=""
-      />
-    </div> 
-  ));
+  return images.map((image: any, index: number) => {
+    const imageName = imageContext.keys()[index].replace(/.*\/|\.\w+$/g, '');
+    return (
+      <div className={baseClassName} key={`Image-${imageName}`} title={imageName}>
+        <Image
+          src={image.default}
+          alt={imageName}
+          width={70}
+          height={70}
+          className=""
+        />
+      </div>
+    );
+  });
 }

@@ -1,9 +1,13 @@
 import { ContactAction, ExperienceAndEducation, AboutMe,Technologies } from "@/sections";
-const BlogApp: React.FC = () => {
+import { Metadata } from "next";
+import {contentMetaData} from '@/lib/constants'
 
+export const metadata: Metadata =contentMetaData.aboutMe
+
+const BlogApp: React.FC = () => {
   return (
     <div className="">
-      <h1 className="pt-10 text-center text-xl dark:bg-gray-900">
+      <h1 className="pt-10 text-center text-xl">
       <span className="text-green-600 text-3xl font-semibold uppercase block">
       Innovative Full Stack Developer
       </span>

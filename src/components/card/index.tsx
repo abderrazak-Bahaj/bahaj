@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({
       height="350"
       width="350"
       src={image}
-      className={`text-gray-500 dark:text-gray-400 mb-3  rounded-lg ${props.theme == "secondary" ? "h-[100%] w-[50%]" :"max-h-48 w-full"} `}
+      className={`text-gray-500 dark:text-gray-400 rounded-lg max-h-48 w-full ${props.theme == "secondary" ? " md:max-h-full md:h-full md:w-1/2" :"mb-3"} `}
     />
   );
 
@@ -111,7 +111,7 @@ const getClassName = (tag: string) => {
     case "primary":
       return `${baseClassName} dark:bg-gray-800 opacity-80 transition hover:border-pink-500/10 hover:shadow-pink-500/10 hover:opacity-100`;
     case "secondary":
-      return `${baseClassName} mb-5 max-w-sm gap-3 flex min-w-[100%] w-full  group hover:no-underline focus:no-underline  dark:bg-gray-900 dark:border-gray-700   border border-gray-200`;
+      return `${baseClassName} mb-5 max-w-sm gap-3 flex flex-col md:flex-row min-w-[100%] w-full  group hover:no-underline focus:no-underline  dark:bg-gray-900 dark:border-gray-700   border border-gray-200`;
     case "tertiary":
       return `${baseClassName}  bg-transparent dark:bg-inherit dark:border-gray-700  hover:shadow-gray-800 border border-gray-200`;
     default:

@@ -47,7 +47,7 @@ const Service: React.FC = () => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap">
+        <div className="flex flex-wrap p-5 md:p-0">
           {services.map((service) => (
             <div className="w-full px-4 md:w-1/2 lg:w-1/3" key={service.id}>
               <ServiceCard

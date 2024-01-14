@@ -56,9 +56,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ params }) => {
         perfect CSS framework, well let’s find out.
       </p>
       <p>Tailwind is a utility-first CSS framework, the keyword being ‘utility’. It is basically a set of classes that you can use in your HTML.</p>
-      <pre className="dark:bg-gray-950 p-5 my-5 dark:text-gray-300">
+      <pre className="dark:bg-gray-950 p-5 my-5 dark:text-gray-300 overflow-x-scroll">
         {
-         <code>
+         <code >
          {`.bg-purple-700 {
            background-color: #6b46c1;
          }

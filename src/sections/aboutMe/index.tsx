@@ -1,5 +1,7 @@
 import React from "react";
 import { ReviewCard } from "@/components";
+import Image from "next/image";
+import collaborateImage from '@/assets/images/collaborate.jpg';
 
 const AboutMe: React.FC = () => {
   return (
@@ -7,10 +9,12 @@ const AboutMe: React.FC = () => {
     <div className=" dark:text-gray-100 ">
       <div className="container mx-auto space-y-12">
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-          <img
-            src="https://source.unsplash.com/640x480/?1"
-            alt=""
-            className="h-80 dark:bg-gray-500 aspect-video"
+        <Image
+            src={collaborateImage}
+            alt="about me"
+            height={500}
+            width={500}
+            className="h-80 w-2/5 dark:bg-gray-500 aspect-video"
           />
           <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-800">
             <h3 className="text-3xl font-bold">
@@ -44,10 +48,12 @@ const AboutMe: React.FC = () => {
               }
             </p>
           </div>
-          <img
-            src="https://source.unsplash.com/640x480/?1"
-            alt=""
-            className="h-80 dark:bg-gray-500 aspect-video"
+          <Image
+            src={collaborateImage}
+            alt="collaborate"
+            height={500}
+            width={500}
+            className="h-80 w-2/5 dark:bg-gray-500 aspect-video"
           />
         </div>
       </div>
